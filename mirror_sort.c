@@ -1,5 +1,6 @@
 #include "push_swap.h"
 
+
 void    mirror_sort(t_lst **lst_a, t_lst **lst_b)
 { 
     int         i;

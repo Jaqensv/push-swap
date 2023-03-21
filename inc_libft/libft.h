@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: MAIN <MAIN@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 22:21:05 by mde-lang          #+#    #+#             */
-/*   Updated: 2023/03/08 22:58:24 by MAIN             ###   ########.fr       */
+/*   Updated: 2023/03/21 22:53:49 by mde-lang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 # include <string.h> //pour strnstr
 # include <unistd.h>
 # include <limits.h> // pour int_min / int_max
+
+# ifndef CHUNKS
+#  define CHUNKS 12
+# endif
 
 typedef struct s_element
 {
@@ -78,4 +82,4 @@ void	ft_lstclear(t_lst **lst, void (*del)(void*));
 void	ft_lstiter(t_lst *lst, void (*f)(void *));
 t_lst	*ft_lstmap(t_lst *lst, void *(*f)(void *), void (*del)(void *));
 
-#endif
+# endif
