@@ -6,7 +6,7 @@
 /*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 22:21:05 by mde-lang          #+#    #+#             */
-/*   Updated: 2023/03/21 22:53:49 by mde-lang         ###   ########.fr       */
+/*   Updated: 2023/03/23 20:49:53 by mde-lang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <limits.h> // pour int_min / int_max
 
 # ifndef CHUNKS
-#  define CHUNKS 12
+#  define CHUNKS 10
 # endif
 
 typedef struct s_element

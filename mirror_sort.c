@@ -1,48 +1,63 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mirror_sort.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/23 20:10:38 by mde-lang          #+#    #+#             */
+/*   Updated: 2023/03/24 01:34:55 by mde-lang         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
+// void    find_highest(t_lst *lst_b)
+// {
+//     int i;
 
-void    mirror_sort(t_lst **lst_a, t_lst **lst_b)
+//     i = 1;
+	
+
+
+
+
+
+
+// }
+
+
+
+
+
+void	mirror_sort(t_lst **lst_a, t_lst **lst_b)
 { 
-    int         i;
-    int         arg_len;
-    //static int  s = 0;
-    //int         j = 0;
-    bool        on;
-
-    i = 0;
-    arg_len = ft_lstsize(*lst_a);
-    on = false;
-    ///////////////////////////////////////
-    while (i < arg_len)
-    {
-        if (ft_lstsize(*lst_b) >= arg_len / 2)
-        {
-            while (ft_lstsize(*lst_a) > arg_len / 4)
-            {
-                if ((*lst_a)->content->rank <= arg_len * 0.25)
-                    ra(lst_a, true);
-                if ((*lst_a)->content->rank <= arg_len * 0.50 && (*lst_a)->content->rank > arg_len * 0.25) 
-                    pb(lst_a, lst_b);
-            }
-        }
-        if ((*lst_a)->content->rank <= arg_len * 0.50)
-            ra(lst_a, true);
-        if ((*lst_a)->content->rank > arg_len * 0.50 && (*lst_a)->content->rank < arg_len * 0.75)
-        {
-            pb(lst_a, lst_b);
-            on = true;
-        }
-        if ((*lst_a)->content->rank >= arg_len * 0.75)
-        {
-            pb(lst_a, lst_b);
-            if (on == true)
-                rb(lst_b, true);
-        }
-        i++;
-        /////////////////////////////////////
-        // while (ft_lstsize(*lst_a) < arg_len / 2)
-        //     pa(lst_a, lst_b);
-        /////////////////////////////////////
-
-    }
+	int	i;
+	int	fract;
+	int	arg_len;
+	
+	i = 0;
+	fract = 1;
+	arg_len = ft_lstsize(*lst_a);
+	while (fract <= 5)
+	{
+		while (i < arg_len * fract / 5)
+		{
+			if ((*lst_a)->content->rank <= arg_len * fract / 5)
+			{
+				pb(lst_a, lst_b);
+				i++;
+				if (ft_lstsize(*lst_b) > 1 && (*lst_b)->content->rank < arg_len * ((double)fract - 0.5) / 5.0)
+				{
+					if ((*lst_a)->content->rank > arg_len * fract / 5)
+						rr(lst_a, lst_b);
+					else
+						rb(lst_b, true);
+				}
+			}
+			else
+				ra(lst_a, true);
+		}
+		fract += 1;
+	}
 }
