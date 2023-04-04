@@ -6,17 +6,11 @@
 /*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 20:10:31 by mde-lang          #+#    #+#             */
-/*   Updated: 2023/03/23 20:10:32 by mde-lang         ###   ########.fr       */
+/*   Updated: 2023/04/03 17:13:38 by mde-lang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void    packaging(t_lst *lst)
-{
-    lst->content->packer += 0.50;
-    lst->content->pack = lst->content->packer;
-}
 
 void    ranking(char **arg, t_lst *lst)
 {
@@ -35,10 +29,7 @@ void    ranking(char **arg, t_lst *lst)
             lst->content->rank++;
             while (arg[++j])
                 if (ft_atoi(arg[i]) > ft_atoi(arg[j]))
-                {
                     lst->content->rank++;
-                    packaging(lst);
-                }
             lst = lst->next;
             i++;
         }
