@@ -6,7 +6,7 @@
 /*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 22:21:05 by mde-lang          #+#    #+#             */
-/*   Updated: 2023/04/03 17:10:00 by mde-lang         ###   ########.fr       */
+/*   Updated: 2023/04/04 02:57:43 by mde-lang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_element
 	long long int	value; // long long pour check si nb > int max
 	int				rank;
 	int				pack;
+	int				position;
 	int				highest;
 	int				next_highest;
 }					t_element;

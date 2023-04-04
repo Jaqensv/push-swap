@@ -6,7 +6,7 @@
 /*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:06:04 by mde-lang          #+#    #+#             */
-/*   Updated: 2023/04/03 23:42:58 by mde-lang         ###   ########.fr       */
+/*   Updated: 2023/04/04 03:14:21 by mde-lang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	print_stacks(t_lst *lst_a, t_lst *lst_b)
 	while (lst_a || lst_b)
 	{
 		if (lst_a)
-			printf("%d", lst_a->content->pack);
+			printf("%d", lst_a->content->rank);
 		else
 			printf("  ");
 		printf("  ");
 		if (lst_b)
-			printf("%d", lst_b->content->pack);
+			printf("%d", lst_b->content->rank);
 		else
 			printf("  ");
 		printf("\n");
