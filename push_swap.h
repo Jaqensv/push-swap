@@ -6,7 +6,7 @@
 /*   By: MAIN <MAIN@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:06:33 by mde-lang          #+#    #+#             */
-/*   Updated: 2023/03/19 15:35:07 by MAIN             ###   ########.fr       */
+/*   Updated: 2023/03/25 03:26:00 by MAIN             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,9 @@ void    sort_3(t_lst **lst_a);
 void    pack_sort(t_lst **lst_a, t_lst *lst_b, int pack_max);
 void    hourglass_sort(t_lst **lst_a, t_lst **lst_b);
 void    mirror_sort(t_lst **lst_a, t_lst **lst_b);
+void    find_highest(t_lst *lst_b);
+void    sort(t_lst **lst_a, t_lst **lst_b);
+
+
 
 #endif

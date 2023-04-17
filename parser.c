@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: MAIN <MAIN@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:15:12 by mde-lang          #+#    #+#             */
-/*   Updated: 2023/03/11 08:48:49 by MAIN             ###   ########.fr       */
+/*   Updated: 2023/03/23 20:00:44 by mde-lang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,10 @@ bool    size(t_lst *lst)
 
 bool    error(char **arg, t_lst *lst)
 {
-    alpha(arg);
     if (alpha(arg) == false)
         return (false);
-    duplicata(lst);
     if (duplicata(lst) == false)
         return (false);
-    size(lst);
     if (size(lst) == false)
         return (false);
     return (true);
