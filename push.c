@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/24 17:13:55 by mde-lang          #+#    #+#             */
-/*   Updated: 2023/04/14 06:11:50 by mde-lang         ###   ########.fr       */
+/*   Created: 2023/01/20 14:12:15 by mde-lang          #+#    #+#             */
+/*   Updated: 2023/04/14 05:28:18 by mde-lang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-t_lst	*ft_lstmap(t_lst *lst, void *(*f)(void *), void (*del)(void *))
+void	pa(t_lst **lst_a, t_lst **lst_b)
 {
 	t_lst	*tmp;
-	t_lst	*new_element;
 
-	if (!lst || !f)
-		return (0);
-	new_element = 0;
-	while (lst)
-	{
-		tmp = (f(lst->content));
-		lst = ft_lstnew(tmp);
-		if (!lst)
-		{
-			free(tmp);
-			ft_lstclear(&new_element, del);
-			return (0);
-		}
-		ft_lstadd_back(&new_element, lst);
-		lst = lst->next;
-	}
-	return (new_element);
+	if (*lst_b == NULL)
+		return ;
+	tmp = *lst_b;
+	*lst_b = (*lst_b)->next;
+	tmp->next = *lst_a;
+	*lst_a = tmp;
+	write(1, "pa\n", 3);
+}
+
+void	pb(t_lst **lst_a, t_lst **lst_b)
+{
+	t_lst	*tmp;
+
+	if (*lst_a == NULL)
+		return ;
+	tmp = *lst_a;
+	*lst_a = (*lst_a)->next;
+	tmp->next = *lst_b;
+	*lst_b = tmp;
+	write(1, "pb\n", 3);
 }

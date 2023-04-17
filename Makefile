@@ -1,8 +1,6 @@
-NAME = push_swap.a
+NAME = push_swap
 
 SOURCES = push_swap.c \
-		sa_to_pb.c \
-		ra_to_rrb.c \
 		parser.c \
 		inc_libft/ft_atoi.c \
 		inc_libft/ft_lstadd_back.c \
@@ -14,30 +12,39 @@ SOURCES = push_swap.c \
 		inc_libft/ft_calloc.c \
 		inc_libft/ft_strlen.c \
 		inc_libft/ft_bzero.c \
-		pack_sort.c \
+		mirror_sort.c \
+		mini_sort.c \
 		content.c \
-		
-		
+		push.c \
+		reverse.c \
+		rotate.c \
+		swap.c \
+
 OBJECTS = $(SOURCES:.c=.o)
 BONUS = $(SRC_BONUS:.c=.o)
 
-CC = gcc
+CC = gcc $(CFLAGS)
 
 CFLAGS = -Wall -Wextra -Werror -g
 
-all: $(NAME)
+all: libft $(NAME)
+
+libft:
+	$(MAKE) -C inc_libft
 
 $(NAME): $(OBJECTS)
-		$(AR) -r $@ $?
+		$(CC) -L inc_libft -lft $(OBJECTS) -o $(NAME)
 
 bonus: $(BONUS)
 	$(AR) -r $(NAME) $?
 	
 clean:
 		rm -f $(OBJECTS) $(BONUS)
+		$(MAKE) -C inc_libft clean
 
 fclean: clean
 		rm -f $(NAME)
+		$(MAKE) -C inc_libft fclean
 
 re: fclean all
 
