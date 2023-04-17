@@ -6,7 +6,7 @@
 /*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:06:04 by mde-lang          #+#    #+#             */
-/*   Updated: 2023/04/04 03:14:21 by mde-lang         ###   ########.fr       */
+/*   Updated: 2023/04/14 05:23:07 by mde-lang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,27 @@ void	print_stacks(t_lst *lst_a, t_lst *lst_b)
 		printf("\n");
 		i++;
 		if (lst_a)
-		 lst_a = lst_a->next;
+			lst_a = lst_a->next;
 		if (lst_b)
 			lst_b = lst_b->next;
 	}
 	printf("_   _\na   b\n\n");
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_lst	*lst_a;
 	t_lst	*lst_b;
-	
+	int		arg_len;
+
 	lst_a = NULL;
 	lst_b = NULL;
 	parser(argc, argv, &lst_a);
-	mirror_sort(&lst_a, &lst_b);
-	print_stacks(lst_a, lst_b);
+	arg_len = ft_lstsize(lst_a);
+	if (ft_lstsize(lst_a) == 3 || ft_lstsize(lst_a) == 5)
+		mini_sort(&lst_a, &lst_b);
+	else
+		mirror_sort(&lst_a, &lst_b, arg_len);
+	//print_stacks(lst_a, lst_b);
 	return (0);
 }
