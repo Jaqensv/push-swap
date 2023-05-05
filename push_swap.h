@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: MAIN <MAIN@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 12:06:33 by mde-lang          #+#    #+#             */
-/*   Updated: 2023/04/17 14:06:07 by MAIN             ###   ########.fr       */
+/*   Created: 2023/03/23 20:10:31 by mde-lang          #+#    #+#             */
+/*   Updated: 2023/04/26 06:51:23 by MAIN             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,6 @@ void	rr(t_lst **lst_a, t_lst **lst_b);
 void	rra(t_lst **lst_a, bool one_write);
 void	rrb(t_lst **lst_b, bool one_write);
 void	rrr(t_lst **lst_a, t_lst **lst_b);
-void	sort_3(t_lst **lst_a);
-void	pack_sort(t_lst **lst_a, t_lst *lst_b, int pack_max);
-void	hourglass_sort(t_lst **lst_a, t_lst **lst_b);
 void	mirror_sort(t_lst **lst_a, t_lst **lst_b, int arg_len);
 t_lst	*prev_last(t_lst *lst, t_lst *tmp);
 t_xtrem	find_xtrem(t_lst *lst_b);
@@ -44,5 +41,7 @@ void	mini_sort(t_lst **lst_a, t_lst **lst_b);
 void	back_xtrem(t_lst **lst_a, t_lst **lst_b, t_xtrem xtrem, bool *on_off);
 void	back_to_a(t_lst **lst_a, t_lst **lst_b);
 void	chuncks(t_lst **lst_a, t_lst **lst_b, int arg_len, int fract);
+void	initial_order(int argc, char **arg);
+void	free_split(int argc, char **arg);
 
 #endif

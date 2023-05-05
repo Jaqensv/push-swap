@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: MAIN <MAIN@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 12:06:04 by mde-lang          #+#    #+#             */
-/*   Updated: 2023/04/17 14:05:56 by MAIN             ###   ########.fr       */
+/*   Created: 2023/03/23 20:10:31 by mde-lang          #+#    #+#             */
+/*   Updated: 2023/05/04 19:53:23 by MAIN             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,17 @@ void	print_stacks(t_lst *lst_a, t_lst *lst_b)
 	}
 	printf("_   _\na   b\n\n");
 }
+void	free_split(int argc, char **arg)
+{
+	int	i;
+
+	i = -1;
+	if (argc != 2)
+		return ;
+	while (arg[++i])
+		free(arg[i]);
+	free(arg);
+}
 
 int	main(int argc, char **argv)
 {
@@ -54,5 +65,11 @@ int	main(int argc, char **argv)
 	else
 		mirror_sort(&lst_a, &lst_b, arg_len);
 	//print_stacks(lst_a, lst_b);
+	system("leaks a.out");
 	return (0);
 }
+////////// CHECKS LES HEADERS
+////////// CHECK LEAKS
+////////// FREE SPLIT
+////////// Si aucun paramètre n’est spécifié, le programme ne doit rien afficher et rendre
+////////// l’invite de commande.

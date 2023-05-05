@@ -6,7 +6,7 @@
 /*   By: MAIN <MAIN@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 22:21:05 by mde-lang          #+#    #+#             */
-/*   Updated: 2023/04/17 14:04:49 by MAIN             ###   ########.fr       */
+/*   Updated: 2023/04/17 16:10:45 by MAIN             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ typedef struct s_lst
 typedef struct s_xtrem
 {
 	int	rank_high;
-	int	rank_small;
+	int	rank_low;
 	int	spot_high;
-	int	spot_small;
+	int	spot_low;
 }					t_xtrem;
 
 size_t			ft_strlen(const char *str);

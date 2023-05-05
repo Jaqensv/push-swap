@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
+/*   By: MAIN <MAIN@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 14:15:12 by mde-lang          #+#    #+#             */
-/*   Updated: 2023/04/14 05:20:47 by mde-lang         ###   ########.fr       */
+/*   Updated: 2023/05/04 20:07:28 by MAIN             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,17 +81,24 @@ void	parser(int argc, char **argv, t_lst **lst)
 	t_element	*package;
 
 	i = -1;
+
 	if (argc == 2)
 		arg = ft_split(argv[1], ' ');
 	else
 		arg = &argv[1];
+	if (error(arg, *lst) == false)
+	{
+		free_split(argc, arg);
+		return (write(2, "Error\n", 6), exit(1));
+	}
+	if (argc > 1)
+		initial_order(argc, arg);
 	while (arg[++i])
 	{
 		package = malloc(sizeof(t_element));
 		package->value = ft_atoi(arg[i]);
 		ft_lstadd_back(lst, ft_lstnew(package));
 	}
-	if (error(arg, *lst) == false)
-		return (write(2, "Error\n", 6), exit(1));
 	ranking(arg, *lst);
+	free_split(argc, arg);
 }
